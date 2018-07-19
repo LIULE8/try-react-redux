@@ -8,13 +8,8 @@ class App extends Component {
     }
 
     render() {
-        const {state, onIncrement, onDecrement, onMutipart, amount} = this.props;
         return (
-            <CounterGroup onIncrement={onIncrement}
-                          state={state}
-                          onDecrement={onDecrement}
-                          onMutipart={onMutipart}
-                          amount={amount}/>
+            <CounterGroup amount={2}/>
         );
     }
 }
