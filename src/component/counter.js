@@ -12,6 +12,11 @@ export default class Counter extends React.Component {
         this.props.onMutipart(value, this.props.index)
     };
 
+    IncrementAsync = () =>{
+        let slef = this;
+        setTimeout(()=>slef.props.onIncrement(slef.props.index),1000);
+    };
+
     render() {
         const {value, index, onIncrement, onDecrement} = this.props;
         return (
@@ -28,6 +33,9 @@ export default class Counter extends React.Component {
                     <input type="text" defaultValue={0} size={10} ref={this.inputRef}/>
                     <button onClick={this.multipler}>
                         *
+                    </button>
+                    <button onClick={this.IncrementAsync}>
+                        Increment Async
                     </button>
                 </p>
             </div>
